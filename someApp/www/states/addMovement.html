@@ -1,0 +1,73 @@
+<div class="row">
+
+
+  <input name="group1" type="radio" id="test1" ng-click="move.selectedMood('bad')"/>
+  <label for="test1"><i class="fa fa-frown-o"></i></label>
+
+  <input name="group1" type="radio" id="test2" ng-click="move.selectedMood('ok')"/>
+  <label for="test2"><i class="fa fa-meh-o"></i></label>
+
+  <input class="with-gap" name="group1" type="radio" id="test3" ng-click="move.selectedMood('good')"/>
+  <label for="test3"><i class="fa fa-smile-o"></i></label>
+
+
+    <div class="col s12">
+        <h5>Please choose your exercise below</h5>
+
+        <ul class="tabs" tabs>
+            <li ng-show="move.muscles.chest.length" class="tab col s3"><a href="#chest">Chest</a></li>
+            <li ng-show="move.muscles.legs.length" class="tab col s3"><a class="active" href="#legs">Legs</a></li>
+            <li ng-show="move.muscles.shoulders.length" class="tab col s3"><a href="#shoulders">Shoulders</a></li>
+            <li ng-show="move.muscles.arms.length" class="tab col s3"><a href="#arms">Arms</a></li>
+        </ul>
+    </div>
+    <div id="chest" class="col s12">
+
+      <select class="white" ng-model="move.selected" ng-options="muscle as muscle for muscle in move.muscles.chest">
+         <option value=""> Chest Exercises </option>
+      </select>
+    </div>
+    <div id="legs" class="col s12">
+      <select class="white" ng-model="move.selected" ng-options="muscle as muscle for muscle in move.muscles.legs">
+      <option value=""> Legs Exercises</option>
+      </select>
+    </div>
+    <div id="shoulders" class="col s12">
+      <select class="white" ng-model="move.selected" ng-options="muscle as muscle for muscle in move.muscles.shoulders">
+      <option value=""> Shoulders Exercises</option>
+     </select>
+   </div>
+    <div id="arms" class="col s12">
+      <select class="white" ng-model="move.selected" ng-options="muscle as muscle for muscle in move.muscles.arms">
+      <option value=""> Arms Exercises</option>
+      </select>
+    </div>
+</div>
+
+<form name="myForm">
+  <h2>{{ move.selected }}</h2>
+
+  <input type="text" ng-model="move.reps" placeholder="Reps" >
+  <input type="text" ng-model="move.weight" placeholder="Weight/kg" >
+  <input type="text" ng-model="move.sets" placeholder="Sets" >
+
+  </form>
+  <a twitter data-text="" data-url="http://0.0.0.0:8080/#/signIn"></a>
+<div id="addedMovements">
+  <h4>Current Workout</h4>
+
+<!--Rating HMTL -->
+    <!-- ng-if="move.rating" -->
+
+<!--Rating HMTL END -->
+
+    <span><p>{{move.userWorkout[0].name}}</p><p>{{move.userWorkout[0].weight}}</p></span>
+    <span><p>{{move.userWorkout[1].name}}</p><p>{{move.userWorkout[1].weight}}</p></span>
+    <span><p>{{move.userWorkout[2].name}}</p><p>{{move.userWorkout[2].weight}}</p></span>
+    <span><p>{{move.userWorkout[3].name}}</p><p>{{move.userWorkout[3].weight}}</p></span>
+    <span><p>{{move.userWorkout[4].name}}</p><p>{{move.userWorkout[4].weight}}</p></span>
+</div>
+
+<button class="btn waves-effect waves-light green lighten-3" ng-click="move.addExercise()">Add Movement</button>
+<button class="btn waves-effect waves-light purple lighten-3" ng-click="move.saved()">Save</button>
+<button class="btn waves-effect waves-light green lighten-3" ng-if="move.back" ui-sref="createWorkout.chooseMuscleGroup">Go Back?</button>

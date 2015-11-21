@@ -1,0 +1,73 @@
+<h2>Hello!<br>{{app.user.displayName | uppercase}}</h2>
+
+<!-- <h3>Are you <span><a ng-click="app.genderSelect('male')" href="#">male</a></span>
+  or <span><a ng-click="app.genderSelect('female')" href="#">female</a></span>?</h3> -->
+<!-- <div class="stats" ng-if="app.set">
+    <h3>Stats: </h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Qui sit, sunt nesciunt. </p>
+    <ul>
+      <li>Heighest weight lifted:</li>
+      <li>Workout total:</li>
+      <li>Longest Streak:</li>
+    </ul>
+</div> -->
+
+<div >
+  <h3>Please choose your skill level: </h3>
+<ul  class="collapsible" data-collapsible="accordion">
+   <li>
+     <div class="collapsible-header" ng-click="user.begin()">
+       <i class="material-icons">trending_flat</i>
+       Beginner
+     </div>
+     <div class="collapsible-body">
+       <p>You are new to the gym and don't know much</p>
+     </div>
+
+     <li>
+       <div class="collapsible-header" ng-click="user.int()">
+         <i class="material-icons">trending_up</i>
+         Intermediate
+       </div>
+       <div class="collapsible-body">
+         <p>You are new to the gym and don't know much</p>
+       </div>
+
+       <li>
+         <div class="collapsible-header" ng-click="user.advanced()">
+           <i class="material-icons">done</i>
+           Advanced
+         </div>
+         <div class="collapsible-body">
+           <p>You are a veteran of Iron bars people come to you for help</p>
+         </div>
+
+         <li>
+           <div class="collapsible-header" ng-click="user.exp()">
+             <i class="material-icons">report_problem</i>
+             Expert
+           </div>
+           <div class="collapsible-body">
+             <p>Why the hell are you here?</p>
+           </div>
+
+ </ul>
+ <div class="container valign wrapper">
+
+ <button class="waves-effect waves-light btn-large" ui-sref="home" ng-click="user.setChoice()">
+   Confirm choice
+ </button>
+</div>
+</div>
+
+<!-- <h4>Beg</h4>
+<button ng-click="app.begin()"></button>
+
+
+<h4>Int</h4>
+<button ng-click="app.int()"></button>
+
+
+<h4>Adv</h4>
+<button ng-click="app.advanced()"></button> -->

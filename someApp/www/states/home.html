@@ -1,0 +1,74 @@
+<div class="intro blue-grey lighten-5 z-depth-1">
+  <!-- blue-grey lighten-5 -->
+  <div class="container valign wrapper">
+  <div class="section">
+  <div class="row">
+    <div class="center-btn valign center">
+    <div class="col s12 m12">
+
+      <h5 id="welcome" class="valign center grey-text">
+        Welcome <span>{{app.user.displayName | uppercase}}!</span></h5>
+         <img id="user" ng-src="{{app.user.picture}}" alt="">
+
+      <div id="welcome" class="section">
+      <div class="col s12 m12">
+        <button class="waves-effect waves-light btn-large" ui-sref="createWorkout.chooseMuscleGroup">
+            <i class="material-icons">note_add</i>
+            Create your own workout</button>
+      </div>
+    </div>
+
+      <div class="col s12 m12">
+          <div class="section">
+        <button class="waves-effect waves-light btn-large" ui-sref="previousWorkout.workout-list">
+          <i class="material-icons">work</i>
+          Previous Workouts</button>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="col s12 m12">
+          <div class="section">
+        <button class="waves-effect waves-light btn-large" ui-sref="records">
+          <i class="material-icons">done</i>
+          Records</button>
+      </div>
+    </div>
+
+    <!-- <div class="section">
+      <div class="col s12 m12">
+          <div class="section">
+        <button class="waves-effect waves-light btn-large" ui-sref="records">
+          <i class="material-icons">done</i>
+          Records</button>
+      </div>
+    </div>
+    </div> -->
+
+    <div class="section">
+      <div class="col s12 m12">
+          <div class="section">
+          <a id="disabled" class="waves-effect waves-light btn-large disabled" href='#demoModal' modal>
+            Coming Soon
+          </a>
+          <div class="col">
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <h4>Coming Soon!</h4>
+            <p>Watch this space :D</p>
+        </div>
+        <div class="modal-footer">
+            <a class=" modal-action modal-close waves-effect waves-green btn-flat">
+              Great!
+            </a>
+        </div>
+    </div>
+</div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+  </div>
+</div>
+</div>
