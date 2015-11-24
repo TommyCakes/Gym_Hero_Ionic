@@ -1,16 +1,75 @@
-<ion-view view-title="Chats">
-  <ion-content>
-    <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.face}}">
-        <h2>{{chat.name}}</h2>
-        <p>{{chat.lastText}}</p>
-        <i class="icon ion-chevron-right icon-accessory"></i>
+<ion-view view-title="addMovement">
+    <div class="bar bar-subheader">
+      <h2 class="title">Please Choose your exercise below</h2>
+    </div>
+      <!-- <ion-content class="padding has sub-header">
+            <ul class="tabs" tabs>
+                <li ng-show="move.muscles.chest.length" class="tab col s3"><a href="#chest">Chest</a></li>
+                <li ng-show="move.muscles.legs.length" class="tab col s3"><a class="active" href="#legs">Legs</a></li>
+                <li ng-show="move.muscles.shoulders.length" class="tab col s3"><a href="#shoulders">Shoulders</a></li>
+                <li ng-show="move.muscles.arms.length" class="tab col s3"><a href="#arms">Arms</a></li>
+            </ul>
+        </div>
+        <div id="chest" class="col s12">
 
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
-      </ion-item>
-    </ion-list>
-  </ion-content>
+          <select class="white" ng-model="move.selected" ng-options="muscle as muscle for muscle in move.muscles.chest">
+             <option value=""> Chest Exercises </option>
+          </select>
+        </div>
+        <div id="legs" class="col s12">
+          <select class="white" ng-model="move.selected" ng-options="muscle as muscle for muscle in move.muscles.legs">
+          <option value=""> Legs Exercises</option>
+          </select>
+        </div>
+        <div id="shoulders" class="col s12">
+          <select class="white" ng-model="move.selected" ng-options="muscle as muscle for muscle in move.muscles.shoulders">
+          <option value=""> Shoulders Exercises</option>
+         </select>
+       </div>
+        <div id="arms" class="col s12">
+          <select class="white" ng-model="move.selected" ng-options="muscle as muscle for muscle in move.muscles.arms">
+          <option value=""> Arms Exercises</option>
+          </select>
+        </div>
+    </div>
+
+    <form name="myForm">
+      <h2>{{ move.selected }}</h2>
+
+      <input type="text" ng-model="move.reps" placeholder="Reps" >
+      <input type="text" ng-model="move.weight" placeholder="Weight/kg" >
+      <input type="text" ng-model="move.sets" placeholder="Sets" >
+
+      </form>
+      <a twitter data-text="" data-url="http://0.0.0.0:8080/#/signIn"></a>
+    <div id="addedMovements">
+      <h4>Current Workout</h4>
+
+
+
+        <span><p>{{move.userWorkout[0].name}}</p><p>{{move.userWorkout[0].weight}}</p></span>
+        <span><p>{{move.userWorkout[1].name}}</p><p>{{move.userWorkout[1].weight}}</p></span>
+        <span><p>{{move.userWorkout[2].name}}</p><p>{{move.userWorkout[2].weight}}</p></span>
+        <span><p>{{move.userWorkout[3].name}}</p><p>{{move.userWorkout[3].weight}}</p></span>
+        <span><p>{{move.userWorkout[4].name}}</p><p>{{move.userWorkout[4].weight}}</p></span>
+    </div>
+
+    <button class="btn waves-effect waves-light green lighten-3" ng-click="move.addExercise()">Add Movement</button>
+    <button class="btn waves-effect waves-light purple lighten-3" ng-click="move.saved()">Save</button>
+    <button class="btn waves-effect waves-light green lighten-3" ng-if="move.back" ui-sref="createWorkout.chooseMuscleGroup">Go Back?</button>
+
+  </ion-content> -->
+
+      <!-- <ion-list>
+        <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/addMovement/{{chat.id}}">
+          <img ng-src="{{chat.face}}">
+          <h2>{{chat.name}}</h2>
+          <p>{{chat.lastText}}</p>
+          <i class="icon ion-chevron-right icon-accessory"></i>
+
+          <ion-option-button class="button-assertive" ng-click="remove(chat)">
+            Delete
+          </ion-option-button>
+        </ion-item>
+      </ion-list> -->
 </ion-view>

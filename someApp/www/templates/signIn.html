@@ -1,9 +1,18 @@
 <ion-view hide-nav-bar="true">
-  <div class="bar bar-subheader">
-    <h2 class="title">Please Login below</h2>
-  </div>
-  <ion-content class="padding has-subheader">
+  <div class="bar header-bar-light">
 
+  </div>
+
+
+
+  <ion-content class="padding has-subheader">
+    <div id="circle" ng-class="{ 'animated infinite bounce' : app.loading}" >
+      <h3 ng-hide="app.loading" id="greeting">Welcome to Gym Hero!</h3>
+      <h3 ng-if="app.loading" id="greeting">
+        Signing In ...
+      </h3>
+      <img src="img/Logo.png" alt="">
+      </div>
     <button class="icon icon-left ion-social-twitter button button-block button-outline button-positive"
                   ng-click="app.login()">
       Twitter

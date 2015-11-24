@@ -1,0 +1,88 @@
+<ion-view view-title="Create Workout">
+    <!-- <div class="bar bar-subheader"> -->
+      <h2 class="title">Create your own workout!</h2>
+    <!-- </div> -->
+      <ion-content class="padding has sub-header">
+        <ul class="list">
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" ng-click="move.addMuscle('chests')">
+     </label>
+     Chest
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     Legs
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     Arms
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox">
+     </label>
+     Flux Capacitor
+  </li>
+</ul>
+<button class="button button-block" ui-sref="/addMovement">Next</button>
+  <!--<button class="btn waves-effect waves-light green lighten-3" ui-sref="createWorkout.addMovement({muscles: move.muscleList })">NEXT</button> -->
+  </ion-content>
+        <!-- <ul class="lighten-1 z-depth-1 collection with-header">
+          <li class="collection-header">
+            <h5>Please Choose your muscle group! </h5>
+          </li>
+
+      <li class="collection-item" ng-model="move.chests">
+            <div>
+              <p >
+                <input name="group1" type="checkbox" id="test1" ng-click="move.addMuscle('chests')"/>
+                <label for="test1">Chest</label>
+              </p>
+          </div>
+        </li>
+
+          <li class="collection-item" ng-model="move.legs" >
+                <div>
+                  <p >
+                    <input name="group2" type="checkbox" id="test2" ng-click="move.addMuscle('legs')"/>
+                    <label for="test2">Legs</label>
+                  </p>
+              </div>
+            </li>
+
+
+        <li class="collection-item" ng-model="move.arms" >
+              <div>
+                <p >
+                  <input name="group3" type="checkbox" id="test3" ng-click="move.addMuscle('arms')"/>
+                  <label for="test3">Arms</label>
+                </p>
+            </div>
+          </li>
+
+          <li class="collection-item" ng-model="move.shoulders" >
+                <div>
+                  <p >
+                    <input name="group4" type="checkbox" id="test4" ng-click="move.addMuscle('shoulders')"/>
+                    <label for="test4">Shoulders</label>
+                  </p>
+              </div>
+            </li>
+
+            <li class="collection-item" ng-model="move.abs" >
+                  <div>
+                    <p >
+                      <input name="group5" type="checkbox" id="test5" ng-click="move.addMuscle('abs')"/>
+                      <label for="test5">Abs</label>
+                    </p>
+                </div>
+              </li>
+
+
+
+</ion-view>

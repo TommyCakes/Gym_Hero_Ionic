@@ -1,1 +1,19 @@
 /* Empty. Add your own CSS if you like */
+#circle {
+    text-align:center;
+}
+img {
+  position:relative;
+  display:block;
+  max-height:100px;
+  margin:0 auto;
+  height:auto;
+  max-height:150px;
+  margin-top:130px;
+  margin-bottom:80px;
+}
+#greeting {
+  position: relative;
+  margin-top:40px;
+  margin-bottom:-110px;
+}

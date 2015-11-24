@@ -33,8 +33,6 @@ angular.module('workoutApp', ['ionic', 'firebase', 'starter.controllers', 'start
   $stateProvider
 
 
-  // if none of the above states are matched, use this as the fallback
-
   .state('signIn', {
     url: '/signIn',
     templateUrl: 'templates/signIn.html',
@@ -57,16 +55,35 @@ angular.module('workoutApp', ['ionic', 'firebase', 'starter.controllers', 'start
       }
     }
   })
-
+  .state('tab.createWorkout', {
+      url: '/createWorkout',
+      views: {
+        'tab-createWorkout': {
+          templateUrl: 'templates/tab-createWorkout.html',
+          controller: 'ChatsCtrl',
+        }
+      //   'addMovement@': {
+      // templateUrl: 'templates/tab-addMovement.html',
+      //   }
+      }
+    })
   .state('tab.addMovement', {
       url: '/addMovement',
       views: {
         'tab-addMovement': {
-          templateUrl: 'templates/tab-addMovement.html',
-          controller: 'ChatsCtrl'
+          templateUrl: 'templates/tab-addMovement.html'
         }
       }
     })
+    // .state('tab.chat-detail', {
+    //   url: '/addMovement/:chatId',
+    //   views: {
+    //     'tab-chats': {
+    //       templateUrl: 'templates/chat-detail.html',
+    //       controller: 'ChatDetailCtrl'
+    //     }
+    //   }
+    // })
 
   .state('tab.previousWorkouts', {
     url: '/previousWorkouts',
@@ -82,18 +99,14 @@ angular.module('workoutApp', ['ionic', 'firebase', 'starter.controllers', 'start
     views: {
       'tab-records': {
         templateUrl: 'templates/tab-records.html',
-        controller: 'AccountCtrl'
+        controller: 'MoveCtrl as move'
       }
     }
-  });
-  // .state('tab.chat-detail', {
-  //   url: '/chats/:chatId',
-  //   views: {
-  //     'tab-chats': {
-  //       templateUrl: 'templates/chat-detail.html',
-  //       controller: 'ChatDetailCtrl'
-  //     }
-  //   }
-  // });
+  })
+
+
     $urlRouterProvider.otherwise('/signIn')
+
+      // if none of the above states are matched, use this as the fallback
+        // $urlRouterProvider.otherwise('/tab/home')
 });
