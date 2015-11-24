@@ -90,7 +90,7 @@ angular.module('workoutApp', ['ionic', 'firebase', 'starter.controllers', 'start
     views: {
       'tab-previousWorkouts': {
         templateUrl: 'templates/tab-previousWorkouts.html',
-        controller: 'AccountCtrl'
+        controller: 'MoveCtrl as move'
       }
     }
   })

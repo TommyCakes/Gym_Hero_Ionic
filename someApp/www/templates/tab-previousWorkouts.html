@@ -1,9 +1,53 @@
 <ion-view view-title="Account">
-  <ion-content>
-    <ion-list>
-    <!-- <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle> -->
-    </ion-list>
+  <div class="bar bar-subheader">
+    <h2 class="title">Previous Workouts</h2>
+  </div>
+    <ion-content class="padding has-subheader">
+
+      <ion-toggle toggle-class="toggle-calm" ng-click="move.show()">
+
+        Show All Workouts
+      </ion-toggle>
+
+
+      <ion-list>
+        <ion-item ng-show="move.isHidden" ng-repeat="move in move.movements  | orderBy: 'created_at':true | limitTo: 10">
+          Date: <span>{{ move.date | date:'medium' }}</span> <br>
+        <div ng-repeat="exercises in move.exercises">
+          Exercise: <span>{{ exercises.name}}</span> <br>
+          Weight: <span>{{ exercises.weight }} kg</span> <br>
+          Reps: <span> {{ exercises.reps }} </span><br>
+          Sets: <span>{{ exercises.sets }}</span> <br>
+          <div class="padding-bottom">
+          </div>
+        </ion-item>
+        <ion-item ng-show="show" ng-repeat="move in move.movements  | orderBy: 'created_at':true">
+          Date: <span>{{ move.date | date:'medium' }}</span> <br>
+        <div ng-repeat="exercises in move.exercises">
+          Exercise: <span>{{ exercises.name}}</span> <br>
+          Weight: <span>{{ exercises.weight }} kg</span> <br>
+          Reps: <span> {{ exercises.reps }} </span><br>
+          Sets: <span>{{ exercises.sets }}</span> <br>
+          <div class="padding-bottom">
+          </div>
+        </ion-item>
+      </ion-list>
+          <!-- li.item{Item $$}*30 -->
+
+    <!-- <div id="workout-collection" class="collection">
+        <a  class="collection-item">
+
+            <div id="workouts" ng-repeat="move in move.movements | orderBy: 'created_at':true | limitTo: 10">
+                Date: <span>{{ move.date | date:'medium' }}</span> <br>
+              <div ng-repeat="exercises in move.exercises">
+                Exercise: <span>{{ exercises.name}}</span> <br>
+                Weight: <span>{{ exercises.weight }} kg</span> <br>
+                Reps: <span> {{ exercises.reps }} </span><br>
+                Sets: <span>{{ exercises.sets }}</span> <br>
+              </div>
+              </div>
+        </a>
+    </div> -->
+
   </ion-content>
 </ion-view>

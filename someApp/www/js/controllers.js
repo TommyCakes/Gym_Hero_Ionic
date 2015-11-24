@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
   var users = firebaseUrl + 'users'
   var userRef = new Firebase(users)
   this.users = $firebaseArray(userRef)
-  
+
   //Calling login function
   this.login = function() {
     self.loading = true;
@@ -50,8 +50,16 @@ angular.module('starter.controllers', [])
   // console.log(self.users)
 })
 
+
 .controller('MoveCtrl', function($firebaseObject, $firebaseArray, firebaseUrl, $stateParams, Auth, Records) {
   var self = this;
+
+   this.IsHidden = true;
+  this.show = function() {
+    self.isHidden = false;a
+    alert('Hello!')
+  }
+
   this.muscles = $stateParams.muscles
   console.log(self.muscles)
 
