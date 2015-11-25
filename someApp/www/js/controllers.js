@@ -1,7 +1,5 @@
 angular.module('starter.controllers', [])
 
-// .controller('DashCtrl', function($scope) {})
-
 .controller('HomeCtrl', function($firebaseObject, $firebaseArray, $location, firebaseUrl, Auth,  $stateParams, $state ){
    var self = this;
 
@@ -54,11 +52,7 @@ angular.module('starter.controllers', [])
 .controller('MoveCtrl', function($firebaseObject, $firebaseArray, firebaseUrl, $stateParams, Auth, Records) {
   var self = this;
 
-   this.IsHidden = true;
-  this.show = function() {
-    self.isHidden = false;a
-    alert('Hello!')
-  }
+  self.show = false;
 
   this.muscles = $stateParams.muscles
   console.log(self.muscles)

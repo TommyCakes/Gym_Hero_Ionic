@@ -60,17 +60,16 @@ angular.module('workoutApp', ['ionic', 'firebase', 'starter.controllers', 'start
       views: {
         'tab-createWorkout': {
           templateUrl: 'templates/tab-createWorkout.html',
-          controller: 'ChatsCtrl',
+          controller: 'MoveCtrl as move',
         }
-      //   'addMovement@': {
-      // templateUrl: 'templates/tab-addMovement.html',
-      //   }
       }
     })
-  .state('tab.addMovement', {
+  .state('tab.createWorkout.addMovement', {
       url: '/addMovement',
       views: {
-        'tab-addMovement': {
+        'tab-createWorkout@tab': {
+          controller: "MoveCtrl as move",
+        // 'tab-addMovement': {
           templateUrl: 'templates/tab-addMovement.html'
         }
       }
