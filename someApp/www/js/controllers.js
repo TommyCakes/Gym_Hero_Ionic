@@ -1,8 +1,34 @@
 angular.module('starter.controllers', [])
 
-.controller('HomeCtrl', function($firebaseObject, $firebaseArray, $location, firebaseUrl, Auth,  $stateParams, $state ){
+.controller('HomeCtrl', function($ionicSlideBoxDelegate, $firebaseObject, $firebaseArray, $location, firebaseUrl, Auth,  $stateParams, $state ){
    var self = this;
 
+//
+this.startApp = function() {
+ $state.go('tab.createWorkout');
+};
+this.next = function() {
+ $ionicSlideBoxDelegate.next();
+};
+this.previous = function() {
+ $ionicSlideBoxDelegate.previous();
+};
+
+this.slideChanged = function(index) {
+ self.slideIndex = index;
+};
+
+this.pager = false;
+
+this.togglePager = function(){
+ this.pager = !this.pager;
+}
+this.toIntro = function(){
+   $state.go('tab.home');
+ }
+
+
+//
   this.fireLink = firebaseUrl;
   var ref = new Firebase(firebaseUrl)
 
@@ -49,10 +75,14 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('MoveCtrl', function($firebaseObject, $firebaseArray, firebaseUrl, $stateParams, Auth, Records) {
+.controller('MoveCtrl', function($firebaseObject, $firebaseArray, firebaseUrl, $stateParams, Auth, Records, $ionicSlideBoxDelegate) {
   var self = this;
 
   self.show = false;
+
+  this.nextSlide = function() {
+    $ionicSlideBoxDelegate.next();
+  }
 
   this.muscles = $stateParams.muscles
   console.log(self.muscles)

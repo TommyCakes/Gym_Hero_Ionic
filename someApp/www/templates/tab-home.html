@@ -1,39 +1,61 @@
 <ion-view view-title="Home">
   <div class="bar bar-subheader">
-      <button class="icon ion-navicon button button-clear"></button>
+      <!-- <button class="icon ion-navicon button button-clear"></button> -->
     <h2 class="title">Splash Screen</h2>
+      <button id="right" class="button button-positive button-clear no-animation"
+              ng-click="app.next()" ng-show="app.slideIndex != 2">
+        Next
+      </button>
+
+      <button id="left" class="button button-positive button-clear no-animation"
+              ng-click="app.previous()" ng-show="app.slideIndex > 0">
+        Previous
+      </button>
+
+      <!-- <button id="left" class="button button-positive button-clear no-animation"
+              ng-click="app.startApp()" ng-show="app.slideIndex <= 1">
+        Skip Intro
+      </button> -->
+      <button class="button button-positive button-clear no-animation"
+              ng-click="app.startApp()" ng-show="app.slideIndex > 1">
+          Start!
+      </button>
+
   </div>
   <ion-content class="padding has-subheader">
 
-    <button class="button button-block button-small button-outline button-calm">Outline Button</button>
+            <ion-slide-box on-slide-changed="app.slideChanged(index)">
+              <ion-slide>
+                <h3>Thank you for choosing Gym Hero!</h3>
+                  <p>Here to make your workouts easy to manage in one simple app</p>
+                <div id="logo">
+                  <img src="img/Logo.png">
+                </div>
 
-    <div class="button-bar">
-      <button class="icon icon-left ion-social-facebook button button-outline button-positive">Facebook</button>
-      <button class="icon icon-left ion-social-twitter button button-outline button-positive">Twitter</button>
-    </div>
 
-    <button class="icon icon-left ion-ionic button button-block button-outline button-calm">
-      <!-- <i class="icon ion-ionic"> Cool things!</i> -->
-      Things to come!
-    </button>
-  <!-- li.item{Item $$}*30 -->
-    <!-- <ul class="list">
-    <a href="#" class="item item-icon">
-      <i class="ion ion-email"></i>
-    Check Mail</a>
-    <li class="item">Item 01</li>
-    <li class="item">Item 02</li>
-    <a href="#" class="item item-icon">
-      <i class="icon ion-mic-a"></i>
-    Item 03
-    <span class="item-note">
-      Record
-    </span>
-    </a>
-    <li class="item">Item 04</li>
-    <li class="item">Item 05</li>
-    <li class="item">Item 06</li>
-    <li class="item">Item 07</li>
-    <li class="item">Item 08</li-->
+              </ion-slide>
+              <ion-slide>
+                <h3>So how do I start?</h3>
+
+                <div id="list">
+                  <h5>Just four easy steps:</h5>
+                  <ol>
+                    <li>Choose the muscle groups you'd like to work on</li>
+                    <li>Select from the supplied movements</li>
+                    <li>Add your weight, reps and sets</li>
+                    <li>Save and then you're all set!</li>
+                  </ol>
+                </div>
+              </ion-slide>
+              <ion-slide>
+
+                <h3>Good Luck</h3>
+                <p>
+                  Go pump some iron
+                </p>
+              </ion-slide>
+            </ion-slide-box>
+
+
     </ion-content>
 </ion-view>
