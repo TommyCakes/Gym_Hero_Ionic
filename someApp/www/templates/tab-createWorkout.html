@@ -5,7 +5,7 @@
 
       <ion-content class="padding has-subheader">
         <ul class="list">
-  <li class="item item-checkbox">
+  <li class="item item-checkbox" ng-model="move.chests">
      <label class="checkbox">
        <input type="checkbox" ng-click="move.addMuscle('chests')">
      </label>
@@ -28,6 +28,12 @@
        <input type="checkbox" ng-click="move.addMuscle('shoulders')">
      </label>
      Shoulders
+  </li>
+  <li class="item item-checkbox">
+     <label class="checkbox">
+       <input type="checkbox" ng-click="move.addMuscle('')">
+     </label>
+     Abs
   </li>
 </ul>
 <button class="button button-block" ui-sref="tab.createWorkout.addMovement({muscles: move.muscleList })">Next</button>

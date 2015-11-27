@@ -1,9 +1,10 @@
 <ion-view view-title="addMovement">
     <div class="bar bar-subheader">
       <h2 class="title">Please Choose your exercise below</h2>
+
     </div>
     <ion-content class="padding has-subheader">
-
+      <button class="button button-clear" ui-sref="tab.createWorkout">Back</button>
       <div class="list">
   <label class="item item-input item-select">
     <div class="input-label">
@@ -17,21 +18,31 @@
   </label>
 </div>
 
-<ion-slide-box on-slide-changed="slideHasChanged($index)">
-  <ion-slide>
-    <div class="box-blue">
-      <h1>Chest</h1>
-    </div>
-  </ion-slide>
+    <ion-slide-box >
+    <ion-slide ng-show="move.muscle === 'chests'">
+        <h3>Chest</h3>
+            <div id="logo">
+              <img src="img/Logo.png">
+            </div>
+    </ion-slide>
 
-  <ion-slide>
-    <div class="box yellow"><h1>YELLOW</h1></div>
-  </ion-slide>
+    <ion-slide ng-if="move.muscles.shoulder.length">
+        <h3>Shoulders</h3>
+            <div id="logo">
+              <img src="img/Logo.png">
+            </div>
+    </ion-slide>
 
-  <ion-slide>
-    <div class="box pink"><h1>PINK</h1></div>
-  </ion-slide>
-</ion-slide-box>
+    <ion-slide ng-if="move.muscles.legs.length">
+        <h3>Legs</h3>
+            <div id="logo">
+              <img src="img/Logo.png">
+            </div>
+    </ion-slide>
+        </ion-slide-box>
+
+
+
               <!-- <ul class="tabs" tabs>
                 <li ng-show="move.muscles.chest.length" class="tab col s3"><a href="#chest">Chest</a></li>
                 <li ng-show="move.muscles.legs.length" class="tab col s3"><a class="active" href="#legs">Legs</a></li>

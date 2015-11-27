@@ -1,9 +1,11 @@
 'use strict';
 
-
 angular.module('workoutApp')
 .controller('MoveCtrl', function($firebaseObject, $firebaseArray, firebaseUrl, $stateParams, Auth, Records) {
   var self = this;
+
+  self.show = false;
+
   this.muscles = $stateParams.muscles
   console.log(self.muscles)
 
