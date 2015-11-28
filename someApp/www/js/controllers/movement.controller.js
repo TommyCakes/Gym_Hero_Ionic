@@ -2,7 +2,7 @@
 
 
 angular.module('workoutApp')
-.controller('MoveCtrl', function($firebaseObject, $firebaseArray, firebaseUrl, $stateParams, Auth, Records) {
+.controller('MoveCtrl', function($firebaseObject, $firebaseArray, firebaseUrl, $stateParams, Auth, Records, $location) {
   var self = this;
 
   self.show = false;
